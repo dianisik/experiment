@@ -35,4 +35,10 @@ public class AdminRestController {
         userService.saveOrUpdate(user);
         return user;
     }
+
+    @DeleteMapping("/api/admin/{id}")
+    public List<User> deleteUser(@PathVariable Long id) {
+        userService.delete(id);
+        return userService.getAllUsers();
+    }
 }
